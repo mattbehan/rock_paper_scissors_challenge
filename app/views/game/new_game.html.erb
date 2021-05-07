@@ -1,0 +1,12 @@
+<div id="app">
+	<p id="header"> ROCK - PAPER - SCISSORS </p>
+
+	<p id="rps-description"> Rock Paper Scissors is a zero sum game that is usually played by two people using their hands and no tools. The idea is to make shapes with an outstretched hand where each shape will have a certain degree of power and will lead to an outcome. </p>
+
+	<p id="choose-throw"> SELECT YOUR BET </p>
+	<div id="shape-container">
+		<%= render "shared/shape", shape: "Rock" %>
+		<%= render "shared/shape", shape: "Paper" %>
+		<%= render "shared/shape", shape: "Scissors" %>
+	</div>
+</div>

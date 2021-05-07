@@ -1,0 +1,6 @@
+<%= link_to game_player_throw_path(throw: shape), method: "post", remote:true, throw: shape do  |form| %>
+	<div id="<%= shape %>" class="shape">
+			<%= image_tag "#{shape}.svg" %>
+			<%= shape %>
+	</div>
+<% end %>
