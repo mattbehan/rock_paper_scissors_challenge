@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* INSTRUCTIONS
+INSTRUCTIONS
 - git clone this repo
 - please run bundle install to install any missing gems
 - checkout the feature branch: `git checkout feature`
@@ -24,7 +24,7 @@ DESIGN DECISIONS
 
 - overall given the requirements the solution that makes the most sense by far is pure JS. We don't need to preserve state, we don't need to hide sensitive information, and we don't entirely care about validating inputs or the user manipulating them, so a back-end isn't really necessary. However since I'm applying for a server position, I used RoR
 
-* todos/improvements
+TODOS/IMPROVEMENTS
   - travis CI
   - unfinished tests (model, controller, integration tests)
   - move display methods from game to helper methods
