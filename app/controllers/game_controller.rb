@@ -2,25 +2,22 @@ class GameController < ApplicationController
 	def new_game
 	end
 
-	def finish_game
-	end
-
 	def player_throw
-		print 'HELLLLLLOOOOOOO'
-		puts params[:throw]
-		puts params:[:throw]
 		x = params[:throw]
-		puts x.downcase
 		if Player.valid_choice?(params[:throw])
-			puts "============================"
 			respond_to do |format|
-				format.js { render :template => "/game/_computer_throw.js.erb", locals: {player_throw: params[:throw] } } 
-				# format.js { render "/game/comp_throw" }
+				format.js { render :template => "/game/_wait.js.erb", locals: {player_throw: params[:throw] } } 
 			end 
 			# MAYBE SHOULD ADD NON JS OPTION AND SHOULD DEFINITELY ADD ERRORS
 		end
 	end
 
+	# using post in case we later wanted to send full state
+	def process_computer_throw_and_finish_game 
+		@game = Game.process_computer_throw_and_finish_game params[:player_throw]
+		respond_to do |format|
+			format.js { render :template => "/game/_end_screen.js.erb", locals: { game: @game } }
+		end
+	end
 
-	# once button clicked, 
 end

@@ -1,0 +1,8 @@
+<% content_for :popup_content do %>
+
+	<%= render :partial => 'game/end_screen_popup_content', locals: {game: game} %>
+
+<% end %>
+
+clearPopup();
+initializePopup("<%=j render 'shared/popup' %>", "popup-end-screen");
