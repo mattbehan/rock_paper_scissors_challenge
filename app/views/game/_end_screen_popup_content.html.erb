@@ -1,0 +1,12 @@
+<p id="end-message" class="popup-header"> <%= game.end_message %> </p>
+
+<div id="end-middle">
+	<p id='end-declare-winner'> <%= game.display_winner %>
+	<% if game.winner != nil %>
+		<%= render "shared/shape_no_link", shape: game.winner.choice.to_s %>
+	<% else %>
+		<%= render "shared/shape_no_link", shape: game.player1.choice.to_s %>
+	<% end %>
+</div>
+
+<button id='end-button' onclick="clearPopup()">Ok</button>

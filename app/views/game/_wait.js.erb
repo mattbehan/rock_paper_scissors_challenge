@@ -1,0 +1,11 @@
+<% content_for :popup_content do %>
+
+	<%= render :partial => 'game/wait_popup_content', locals: {player_throw: player_throw} %>
+
+<% end %>
+
+initializePopup("<%=j render 'shared/popup' %>", "popup-wait");
+// pause for effect..
+$( document ).ready(function() { 
+	window.setTimeout(computerThrow("<%= player_throw %>"), 5000);
+});
