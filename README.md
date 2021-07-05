@@ -1,6 +1,6 @@
 # README
 
-Based off of https://github.com/ridecharge/rps
+Requirements for exercise were taken from https://github.com/ridecharge/rps
 
 INSTRUCTIONS
 - git clone this repo
