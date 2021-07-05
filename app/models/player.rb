@@ -25,6 +25,9 @@ class Player
 		# make an API request to the url. if it fails, the choice will be set by random_choice
 		uri = URI('https://5eddt4q9dk.execute-api.us-east-1.amazonaws.com/rps-stage/throw')
 		res = Net::HTTP.get_response(uri)
+		parsed = res.body
+		# remove quotes from responses
+		formatted_body = parsed.gsub(/\"/, '')
 		(res.is_a?(Net::HTTPSuccess) && parsed["statusCode"] == 200 && self.class.valid_choice?(formatted_body)) ? formatted_body.capitalize : random_choice
 	end
 end
